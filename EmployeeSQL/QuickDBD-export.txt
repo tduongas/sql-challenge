@@ -1,0 +1,39 @@
+Departments
+-
+dept_no VARCHAR(10) PK
+dept_name VARCHAR(32)
+
+Department_Manager
+-
+dept_no VARCHAR(10) FK - Departments.dept_no
+emp_no INT FK - Employee_Salaries_Junction.emp_no
+
+Department_Employee
+-
+emp_no INT FK - Employee_Salaries_Junction.emp_no
+dept_no VARCHAR(10) FK - Departments.dept_no
+
+Salaries
+-
+emp_no INT PK
+salary INT
+
+Titles
+-
+title_id VARCHAR(10) PK
+title VARCHAR(32)
+
+Employees
+-
+emp_no INT FK - Employee_Salaries_Junction.emp_no
+title_id VARCHAR(10) FK - Titles.title_id
+birth_date VARCHAR(10)
+first_name VARCHAR(24)
+last_name VARCHAR(24)
+sex VARCHAR(1)
+hire_date DATE
+
+Employee_Salaries_Junction
+-
+emp_no INT FK - Salaries.emp_no
+dept_no VARCHAR(10)
